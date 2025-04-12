@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/life.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <title>{% block title %}Healthcare Platform{% endblock %}</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>
+            Life Tag
+            <svg class="lifeline" width="100" height="50" viewBox="0 0 100 50">
+                <polyline points="0,25 20,25 25,10 30,40 35,10 40,25 60,25" 
+                          stroke="red" stroke-width="3" fill="none" />
+            </svg>
+        </h1>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('users') }}">Public Profiles</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

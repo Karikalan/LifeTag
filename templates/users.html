@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Public Profiles{% endblock %}
+
+{% block content %}
+<section class="center-container">
+    <h2>Public Profiles</h2>
+    <ul>
+        {% for profile in profiles %}
+            <li>
+                <strong>Username:</strong> {{ profile['username'] }} <br>
+                <strong>Medical History:</strong> {{ profile['medical_history'] or 'N/A' }} <br>
+                <strong>Allergies:</strong> {{ profile['allergies'] or 'N/A' }} <br>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

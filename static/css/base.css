@@ -1,0 +1,276 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark theme background */
+    color: #EAEAEA; /* Light text for readability */
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1F1F1F; /* Dark gray for header */
+    color: #FF4081; /* Vibrant pink for title */
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFEA00; /* Neon yellow for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00E5FF; /* Electric cyan on hover */
+    text-decoration: underline;
+}
+
+/* Form Container Styling (Signup/Login) */
+.user-form {
+    background-color: #1C1C1C; /* Dark gray for form container */
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 3px 8px rgba(255, 64, 129, 0.4); /* Pink glow */
+}
+
+.user-form h2 {
+    text-align: center;
+    color: #FFEA00; /* Neon yellow */
+    margin-bottom: 20px;
+}
+
+.user-form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #FF4081; /* Vibrant pink */
+}
+
+.user-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #FFEA00; /* Neon yellow border */
+    border-radius: 5px;
+    background-color: #252525; /* Darkest gray */
+    color: #EAEAEA; /* Light gray text */
+}
+
+.user-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #FF4081, #FFEA00); /* Pink to yellow gradient */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 64, 129, 0.5); /* Pink glow */
+}
+
+.user-form button:hover {
+    background: linear-gradient(45deg, #00E5FF, #FFEA00); /* Cyan to yellow on hover */
+    box-shadow: 0 3px 15px rgba(0, 229, 255, 0.5); /* Cyan glow */
+}
+
+/* Profile Section */
+.profile-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #1C1C1C; /* Dark gray */
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(255, 64, 129, 0.4); /* Pink glow */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 229, 255, 0.4); /* Cyan glow */
+}
+
+.header-info h2, .header-info p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #FFEA00; /* Neon yellow */
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.detail-row strong {
+    flex: 1;
+    font-weight: bold;
+    color: #EAEAEA;
+}
+
+.editable-input, textarea.editable-input, select.editable-input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #FF4081; /* Pink border */
+    border-radius: 5px;
+    background: #252525; /* Darkest gray */
+    color: #EAEAEA; /* Light gray */
+}
+
+.save-btn {
+    padding: 12px 24px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #FF4081, #FFEA00); /* Pink to yellow gradient */
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 64, 129, 0.5); /* Pink glow */
+}
+
+/* Public Profiles */
+.center-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #1C1C1C; /* Dark gray */
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(255, 64, 129, 0.4);
+    color: #EAEAEA;
+}
+
+.center-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.center-container li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #252525; /* Darkest gray */
+    border: 1px solid #FF4081; /* Pink accent */
+    border-radius: 5px;
+}
+
+.center-container li:hover {
+    background-color: #333333;
+    box-shadow: 0 3px 8px rgba(0, 229, 255, 0.5); /* Cyan glow */
+}
+
+.center-container strong {
+    color: #FFEA00;
+}
+.lifeline {
+    position:absolute;
+    left: 150px;
+    top:30px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+    0% { stroke-dashoffset: 250; }
+    300% { stroke-dashoffset: 0; }
+}
+h1 {
+    color: rgb(233, 241, 2);
+    margin: 30px;
+    font-size: 170%;
+}
+/* Styling for the About Life Section */
+.about-section {
+    background-color:black; /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-size: 1.8em;
+    color:white; /* Blue heading */
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    color:yellow; /* Dark text */
+    line-height: 1.5em;
+}
+
+/* Styling for the Solution Overview Section */
+.solution-section {
+    background-color:black; /* Light blue background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.solution-section h3 {
+    font-size: 1.8em;
+    color: white; /* Blue heading */
+    margin-bottom: 10px;
+}
+
+.solution-section p {
+    font-size: 1.1em;
+    color:yellow; /* Dark text */
+    line-height: 1.5em;
+}
+
+/* Styling for the Innovation & Uniqueness Section */
+.features-section {
+    background-color: black; /* Light yellow background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.features-section h3 {
+    font-size: 1.8em;
+    color: white; /* Blue heading */
+    margin-bottom: 10px;
+}
+
+.features-section ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+.features-section li {
+    font-size: 1.1em;
+    color:yellow; /* Dark text */
+    margin-bottom: 10px;
+}
+#image-upload {
+    margin-top: 10px;
+}

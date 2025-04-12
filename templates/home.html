@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="center-container">
+    <div class="welcome-section">
+        <h2>Welcome, {{ username }}!</h2>
+        <p>Your gateway to secure, efficient, and accessible healthcare.</p>
+        <form method="POST" class="search-form">
+            <input type="text" name="query" placeholder="Search medical conditions or allergies" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</section>
+
+<section class="about-section">
+    <h3>About Life Tag</h3>
+    <p>Life Tag revolutionizes healthcare by providing instant access to personalized medical profiles through QR codes. Simplifying healthcare processes for patients, doctors, and hospitals.</p>
+</section>
+
+<section class="solution-section">
+    <h3>Solution Overview</h3>
+    <p>Centralized medical records accessible via QR codes that improve diagnosis accuracy, reduce errors, and ensure data privacy with robust encryption.</p>
+</section>
+
+<section class="features-section">
+    <h3>Innovation & Uniqueness</h3>
+    <ul>
+        <li>Instant access to medical records, minimizing paperwork.</li>
+        <li>Empowering users with control over their healthcare data.</li>
+        <li>Enhanced security with multifactor authentication.</li>
+    </ul>
+</section>
+
+<section class="results-section">
+    {% if results %}
+        <h3>Search Results</h3>
+        <ul>
+            {% for result in results %}
+                <li>
+                    <strong>Username:</strong> {{ result['username'] }} <br>
+                    <strong>Medical History:</strong> {{ result['medical_history'] or 'N/A' }} <br>
+                    <strong>Allergies:</strong> {{ result['allergies'] or 'N/A' }} <br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if request.method == 'POST' %}
+            <p>No results found for your query.</p>
+        {% endif %}
+    {% endif %}
+</section>
+{% endblock %}

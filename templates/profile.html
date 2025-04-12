@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<section class="profile-container">
+    <div class="profile-header">
+        <img src="{{ url_for('static', filename='images/user.jpg') }}" alt="Profile Photo" class="profile-photo" id="profile-image">
+        <input type="file" id="image-upload" accept="image/*" onchange="previewImage(event)">
+        <div class="header-info">
+            <h2>
+                <input type="text" id="name" name="name" value="{{ user['name'] }}" class="editable-input">
+            </h2>
+            <p>
+                <input type="text" id="profession" name="profession" value="Software Engineer | Health Enthusiast" class="editable-input">
+            </p>
+        </div>
+    </div>
+
+    <div class="profile-details">
+        <h3>Account Information</h3>
+        <div class="detail-row">
+            <strong>Username:</strong>
+            <input type="text" id="username" name="username" value="{{ user['name'] }}" class="editable-input">
+        </div>
+        <div class="detail-row">
+            <strong>Email:</strong>
+            <input type="email" id="email" name="email" value="{{ user['email'] }}" class="editable-input">
+        </div>
+
+        <h3>Personal Information</h3>
+        <div class="detail-row">
+            <strong>Gender:</strong>
+            <input type="text" id="gender" name="gender" value="Male" class="editable-input">
+        </div>
+        <div class="detail-row">
+            <strong>Age Range:</strong>
+            <select id="age-range" name="age-range" class="editable-input">
+                <option value="child">Child (0-12 years)</option>
+                <option value="teenager">Teenager (13-19 years)</option>
+                <option value="adult" selected>Adult (20-59 years)</option>
+                <option value="senior">Senior (60+ years)</option>
+            </select>
+        </div>
+        <div class="detail-row">
+            <strong>Phone Number:</strong>
+            <input type="text" id="phone" name="phone" value="+91 9876543210" class="editable-input">
+        </div>
+        <div class="detail-row">
+            <strong>Blood Group:</strong>
+            <input type="text" id="blood-group" name="blood-group" value="A+" class="editable-input">
+        </div>
+
+        <h3>Medical History</h3>
+        <div class="detail-row">
+            <strong>Medical Conditions:</strong>
+            <textarea id="medical-conditions" name="medical-conditions" class="editable-input">None</textarea>
+        </div>
+        <div class="detail-row">
+            <strong>Allergies:</strong>
+            <textarea id="allergies" name="allergies" class="editable-input">None</textarea>
+        </div>
+    </div>
+
+    <button class="save-btn" onclick="saveChanges()">Save Profile</button>
+</section>
+
+<script>
+    // Function to handle saving changes
+    function saveChanges() {
+        const profileData = {
+            name: document.getElementById('name').value,
+            profession: document.getElementById('profession').value,
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            gender: document.getElementById('gender').value,
+            ageRange: document.getElementById('age-range').value,
+            phone: document.getElementById('phone').value,
+            bloodGroup: document.getElementById('blood-group').value,
+            medicalConditions: document.getElementById('medical-conditions').value,
+            allergies: document.getElementById('allergies').value,
+        };
+
+        console.log('Profile saved:', profileData);
+        alert('Profile changes saved successfully!');
+    }
+</script>
+{% endblock %}

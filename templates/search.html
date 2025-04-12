@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Profiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(24, 24, 24);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search User Profiles</h2>
+        <form method="POST">
+            <input type="text" name="query" placeholder="Enter medical condition or allergy" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <h3>Search Results:</h3>
+        <ul>
+            {% if results %}
+                {% for result in results %}
+                    <li>
+                        <strong>Username:</strong> {{ result['username'] }} <br>
+                        <strong>Medical History:</strong> {{ result['medical_history'] or 'N/A' }} <br>
+                        <strong>Allergies:</strong> {{ result['allergies'] or 'N/A' }} <br>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>No results found.</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>
